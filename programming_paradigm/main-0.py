@@ -3,20 +3,20 @@ from bank_account import BankAccount
 
 if __name__ == "__main__":
     if len(sys.argv) != 4:
-        print("Usage: python main-0.py <name> <amount> <action>")
+        print("Usage: python main-0.py <name> <amount> <operation>")
         sys.exit(1)
 
     name = sys.argv[1]
-    amount = sys.argv[2]
-    action = sys.argv[3].lower()
+    amount = float(sys.argv[2])
+    operation = sys.argv[3]
 
-    account = BankAccount(name)
+    account = BankAccount(name, 0)
 
-    if action == "deposit":
-        account.deposit(amount)
-    elif action == "withdraw":
-        account.withdraw(amount)
+    if operation == "deposit":
+        print(account.deposit(amount))
+    elif operation == "withdraw":
+        print(account.withdraw(amount))
+    elif operation == "balance":
+        print(account.display_balance())
     else:
-        print("Invalid action. Use 'deposit' or 'withdraw'.")
-
-    account.display_balance()
+        print("Invalid operation.")
