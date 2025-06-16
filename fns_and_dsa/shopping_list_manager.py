@@ -7,7 +7,7 @@ def display_menu():
 
 def main():
     shopping_list = []
-    
+
     while True:
         display_menu()
         choice = input("Enter your choice: ").strip()
@@ -29,8 +29,8 @@ def main():
         elif choice == '3':
             if shopping_list:
                 print("Your Shopping List:")
-                for index, item in enumerate(shopping_list, start=1):
-                    print(f"{index}. {item}")
+                for idx, item in enumerate(shopping_list, start=1):
+                    print(f"{idx}. {item}")
             else:
                 print("Your shopping list is empty.")
         elif choice == '4':
