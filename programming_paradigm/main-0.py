@@ -10,7 +10,8 @@ if __name__ == "__main__":
     amount = float(sys.argv[2])
     operation = sys.argv[3]
 
-    account = BankAccount(name, 0)
+    # Always start with a balance of $250.00 as required
+    account = BankAccount(name)
 
     if operation == "deposit":
         print(account.deposit(amount))
